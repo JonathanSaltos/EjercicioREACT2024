@@ -1,0 +1,13 @@
+.cabecera{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Roboto, Helvetica, sans-serif;
+    background-color: rgb(20, 90, 241);
+    border-radius: 12px;
+    font-size: large;
+    color: black;
+
+
+
+}
