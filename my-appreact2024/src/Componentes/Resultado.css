@@ -1,0 +1,13 @@
+.resultado{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Roboto, Helvetica, sans-serif;
+    background-color: rgb(241, 27, 20);
+    border-radius: 12px;
+    font-size: large;
+    color: rgb(12, 12, 12);
+
+
+
+}
