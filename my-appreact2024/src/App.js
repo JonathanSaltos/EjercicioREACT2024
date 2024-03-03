@@ -85,6 +85,12 @@ const clickHandler2 = () => {
   
 }
 
+{/* Multiplicacion*/ }
+const clickHandler3 = () => {
+  setResultado(numero1*numero2);
+        console.log(resultado);
+  
+}
 
 
 
@@ -121,7 +127,7 @@ const clickHandler2 = () => {
             </Col>
 
             <Col>
-            <Button variant="outline-secondary" id="button-addon1">
+            <Button onClick={clickHandler3}variant="outline-secondary" id="button-addon1">
              X
             </Button>
             </Col>
