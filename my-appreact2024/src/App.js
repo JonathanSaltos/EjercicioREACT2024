@@ -22,6 +22,7 @@ Aquí, numero1 se inicializa con una cadena vacía como valor inicial */ }
 
   const [numero1, setNumero1] = useState(''); 
   const [numero2, setNumero2] = useState(''); 
+  let [resultado, setResultado] = useState('');
 
 
 
@@ -36,25 +37,56 @@ En el contexto de un campo de entrada de texto, este sería el valor actual del 
 setNumero1: Es la función que se utiliza para actualizar el estado de numero1. 
 Al llamar a setNumero1 con el nuevo valor del campo de entrada, React se encargará de actualizar el estado y, por lo tanto, re-renderizar el componente con el nuevo valor de numero1.
 
-*/ }
+submitHandler: Es una función que recibe un objeto de evento (event) como parámetro. Este objeto contiene información sobre el evento, 
+en este caso, el evento de envío de un formulario.
+event.preventDefault(): Este método se utiliza para evitar el comportamiento predeterminado del formulario, que es recargar la página cuando se envía. 
+Al llamar a event.preventDefault(), se detiene ese comportamiento predeterminado y te da la oportunidad de manejar el envío del formulario de la manera que desees.
+Evitas que el formulario se envíe automáticamente cuando el usuario hace clic en el botón de envío, permitiéndote realizar acciones personalizadas antes o después del envío del formulario,
+Como validar datos, realizar una solicitud a un servidor, etc
+
+
+
+
+*/ 
+}
 
 
  
 
   const numero1Handler = (event) => {
-    setNumero1(event.target.value);
+  setNumero1(event.target.value);
 }
  
-const numero2Handler = (event) => {
+  const numero2Handler = (event) => {
   setNumero2(event.target.value);
 }
+
+const resultadoHandler= (event) => {
+  setResultado(event.target.value);
+}
+
+
+  const submitHandler = (event) => {
+   event.preventDefault();
+}
+{/* Suma*/ }
+const clickHandler1 = () => {
+  
+  setResultado(parseFloat(numero1)+parseFloat(numero2));
+        console.log(resultado);
+  
+}
+
+
+
+
 
 
 
   return (    
             <div>
             <Cabecera />
-            <Form>
+            <Form onSubmit={submitHandler}>
             <Container>
             <Row>
 
@@ -72,7 +104,7 @@ const numero2Handler = (event) => {
 
             <Row>
             <Col>
-            <Button variant="outline-secondary" id="button-addon1">
+            <Button onClick={clickHandler1} variant="outline-secondary" id="button-addon1">
              +
             </Button>
             </Col>
@@ -101,7 +133,7 @@ const numero2Handler = (event) => {
             </Container>
 
             </Form>
-            <Resultado />
+            <Resultado resultado={resultado}/>
 
             <Footer />
             
