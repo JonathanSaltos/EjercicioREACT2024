@@ -69,6 +69,7 @@ const resultadoHandler= (event) => {
   const submitHandler = (event) => {
    event.preventDefault();
 }
+
 {/* Suma*/ }
 const clickHandler1 = () => {
   
@@ -77,8 +78,12 @@ const clickHandler1 = () => {
   
 }
 
-
-
+{/* Resta*/ }
+const clickHandler2 = () => {
+  setResultado(numero1-numero2);
+        console.log(resultado);
+  
+}
 
 
 
@@ -110,7 +115,7 @@ const clickHandler1 = () => {
             </Col>
 
             <Col>
-            <Button variant="outline-secondary" id="button-addon1">
+            <Button onClick={clickHandler2}variant="outline-secondary" id="button-addon1">
              -
             </Button>
             </Col>
