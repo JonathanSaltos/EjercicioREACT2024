@@ -1,12 +1,12 @@
 import './Resultado.css'
 
-function Resultado() {
+function Resultado(props) {
     return (    
 
   <div className='resultado'>
    <p>       
     
-    El resultado es:
+    El resultado es:{props.resultado}
 
 
     </p>
