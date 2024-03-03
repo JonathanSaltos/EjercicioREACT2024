@@ -6,7 +6,7 @@ import { useState } from "react";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Button from 'react-bootstrap/Button';
+import {Button , OverlayTrigger, Tooltip } from 'react-bootstrap';
 
 import Resultado from './Componentes/Resultado';
 
@@ -98,7 +98,11 @@ const clickHandler4 = () => {
         console.log(resultado);
   
 }
-
+const renderTooltip = (texto) => (
+  <Tooltip id="button-tooltip">
+    {texto}
+  </Tooltip>
+);
   return (    
             <div>
             <Cabecera />
@@ -119,28 +123,36 @@ const clickHandler4 = () => {
 
 
             <Row>
-            <Col>
-            <Button onClick={clickHandler1} variant="outline-secondary" id="button-addon1">
+            <Col> <OverlayTrigger
+                placement="top"
+                overlay={renderTooltip('Sumar')}>
+            <Button onClick={clickHandler1} variant="success" id="button-addon1 ">
              +
-            </Button>
+            </Button></OverlayTrigger>
             </Col>
 
-            <Col>
-            <Button onClick={clickHandler2}variant="outline-secondary" id="button-addon1">
+            <Col> <OverlayTrigger
+                placement="top"
+                overlay={renderTooltip('Restar')}>
+            <Button onClick={clickHandler2}variant="primary" id="button-addon1">
              -
-            </Button>
+            </Button></OverlayTrigger>
             </Col>
 
-            <Col>
-            <Button onClick={clickHandler3}variant="outline-secondary" id="button-addon1">
+            <Col><OverlayTrigger
+                placement="top"
+                overlay={renderTooltip('Multiplicar')}>
+            <Button onClick={clickHandler3}variant="secondary" id="button-addon1">
              X
-            </Button>
+            </Button></OverlayTrigger>
             </Col>
 
-            <Col>
-            <Button onClick={clickHandler4}variant="outline-secondary" id="button-addon1">
+            <Col><OverlayTrigger
+                placement="top"
+                overlay={renderTooltip('Dividir')}>
+            <Button onClick={clickHandler4}variant="warning" id="button-addon1">
              %
-            </Button>
+            </Button></OverlayTrigger>
             </Col>
             </Row>
            

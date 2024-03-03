@@ -6,7 +6,7 @@ function Resultado(props) {
   <div className='resultado'>
    <p>       
     
-    El resultado es:{props.resultado}
+    El resultado es: {props.resultado}
 
 
     </p>
