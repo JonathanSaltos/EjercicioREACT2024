@@ -92,7 +92,12 @@ const clickHandler3 = () => {
   
 }
 
-
+{/* Division*/ }
+const clickHandler4 = () => {
+  setResultado(numero1/numero2);
+        console.log(resultado);
+  
+}
 
   return (    
             <div>
@@ -133,7 +138,7 @@ const clickHandler3 = () => {
             </Col>
 
             <Col>
-            <Button variant="outline-secondary" id="button-addon1">
+            <Button onClick={clickHandler4}variant="outline-secondary" id="button-addon1">
              %
             </Button>
             </Col>
